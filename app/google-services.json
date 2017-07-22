@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "38914584861",
+    "firebase_url": "https://delhijalboard-88c57.firebaseio.com",
+    "project_id": "delhijalboard-88c57",
+    "storage_bucket": "delhijalboard-88c57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38914584861:android:d2a48a8d18cc9b0b",
+        "android_client_info": {
+          "package_name": "in.ac.iiitd.jal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38914584861-a0aurqtpb3tvko8ke2b0fvkau6njcdcl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.ac.iiitd.jal",
+            "certificate_hash": "ca28ae312c62e72607f05add4334d832c69f4a0d"
+          }
+        },
+        {
+          "client_id": "38914584861-2j8iqgobj06s9aavl82fioneg9vohfrt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9Y0mTDb2-KA9wLFPMeHZbD_hq9cKkvg0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38914584861-2j8iqgobj06s9aavl82fioneg9vohfrt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
