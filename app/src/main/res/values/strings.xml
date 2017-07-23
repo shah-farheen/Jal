@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Jal</string>
+    <string name="request_type">Type of Request</string>
 </resources>
