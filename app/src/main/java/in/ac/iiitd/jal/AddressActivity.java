@@ -122,11 +122,17 @@ public class AddressActivity extends AppCompatActivity {
                 dataModel.setBankBranch(editBranchName.getText().toString());
                 dataModel.setIfscCode(editIfscCode.getText().toString());
                 dataModel.setBankAccountNo(editAccountNo.getText().toString());
+
+                if(checkJjr.isChecked()) dataModel.setJjrColony(true);
+                else dataModel.setJjrColony(false);
+
+                sendForm();
             }
         });
     }
 
     private void sendForm(){
-        DatabaseReference dateRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference dateRef = FirebaseDatabase.getInstance().getReference(dataFile.getString("USER_PHONE", "9876543210"));
+        dateRef.child(String.valueOf(System.currentTimeMillis())).push().setValue(dataModel);
     }
 }
