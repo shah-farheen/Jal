@@ -30,7 +30,9 @@ public class LoginActivity extends AppCompatActivity {
         else {
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder()
             .setAvailableProviders(Arrays.asList(new AuthUI.IdpConfig.Builder(AuthUI.PHONE_VERIFICATION_PROVIDER).build()))
-            .build(), RC_SIGN_IN);
+                    .setTheme(R.style.AppTheme)
+                    .setLogo(R.drawable.logo)
+                    .build(), RC_SIGN_IN);
         }
     }
 
@@ -43,24 +45,29 @@ public class LoginActivity extends AppCompatActivity {
             if(resultCode == ResultCodes.OK){
                 startActivity(new Intent(this, MainActivity.class));
                 finish();
+                return;
             }
             else {
                 if (idpResponse == null) {
                     // User pressed back button
                     showToast(getString(R.string.sign_in_cancelled));
+                    onBackPressed();
                     return;
                 }
 
                 if (idpResponse.getErrorCode() == ErrorCodes.NO_NETWORK) {
                     showToast(getString(R.string.no_internet_connection));
+                    onBackPressed();
                     return;
                 }
 
                 if (idpResponse.getErrorCode() == ErrorCodes.UNKNOWN_ERROR) {
                     showToast(getString(R.string.unknown_error));
+                    onBackPressed();
                     return;
                 }
                 showToast(getString(R.string.unknown_sign_in_response));
+                onBackPressed();
             }
         }
     }
