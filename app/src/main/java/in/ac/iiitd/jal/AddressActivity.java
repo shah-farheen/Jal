@@ -59,14 +59,11 @@ public class AddressActivity extends AppCompatActivity {
     private CheckBox checkJjr;
     private Button nextButton;
 
-    private SharedPreferences dataFile;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address);
         mContext = this;
-        dataFile = getSharedPreferences("DATA_FILE", MODE_PRIVATE);
         Intent intent = getIntent();
         dataModel = intent.getParcelableExtra("DataModel");
 
@@ -197,13 +194,10 @@ public class AddressActivity extends AppCompatActivity {
                 if(checkJjr.isChecked()) dataModel.setJjrColony(true);
                 else dataModel.setJjrColony(false);
 
-                sendForm();
+                Intent uploadIntent = new Intent(mContext, UploadActivity.class);
+                uploadIntent.putExtra("DataModel", dataModel);
+                startActivity(uploadIntent);
             }
         });
-    }
-
-    private void sendForm(){
-        DatabaseReference dateRef = FirebaseDatabase.getInstance().getReference(dataFile.getString("USER_PHONE", "9876543210"));
-        dateRef.child(String.valueOf(System.currentTimeMillis())).push().setValue(dataModel);
     }
 }

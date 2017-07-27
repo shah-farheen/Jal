@@ -5,4 +5,19 @@
     <string name="no_internet_connection">Internet Conn. Error</string>
     <string name="unknown_error">Unknown Error</string>
     <string name="unknown_sign_in_response">Unknown Sign in Response</string>
+
+    <string name="declaration"><b>DECLARATION:</b>
+\na)	I hereby declare that all the information furnished by me is true to the best of my knowledge and if any discrepancies are found , I will be responsible for disconnection of services by the DJB without any prior notice and any other legal action taken by DJB.
+\n\nb)	I declare that there is no dispute on property and there is no stay from any court of law against obtaining water/ sewerage connection.
+\n\nc)	I understand that sanction of connection does not acknowledge or confer any title, ownership or occupancy right in favour of the applicant.</string>
+
+    <string name="undertaking"><b>UNDERTAKING:</b>
+\ni)   I further undertake that in case of any dispute about the ownership of the property I will absolve DJB from any legal battle in the court of law as the water connection applied for is related to supply of potable water and not to decide the ownership of property.
+\n\nii)  I further undertake to pay the charges as and when demanded by DJB, and in the event of non-payment, DJB will be at liberty to disconnect the services being provided by DJB.
+\n\niii) I further undertake that I have not taken \'DJB Employee Rebate\' against any other Premise/Connection.
+\n\niv)	 I undertake to install my water connection only through license plumber of Board.
+\n\nv)	 I Understand that the DJB has a policy not to sanction more than six individual connection for each individual plot. If more than six water connections are required, I will surrender my existing individual water connection without any preconditions &amp; apply for a bulk water connection (Applicable in properties other than CGHS).
+\n\nvi)	 I am applying for a water connection on my own and even if the water supply is available at a low pressure, I will not file any claim for any sort of compensation in any court of Law.
+\n\nvii) In case of variation in plot size as per document submitted by the undersigned and on actual measurement by DJB representative,difference of Development charges on actual measurement will be paid by me.
+\n\nviii)In case connection is found non-feasible on technical ground as per any prevalent policy of DJB the water connection may be denied or if sanctioned inadvertently, the said sanction may be withdrawn and may be disconnected without any notice.</string>
 </resources>

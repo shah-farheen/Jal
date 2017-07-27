@@ -1,8 +1,11 @@
 package in.ac.iiitd.jal;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -13,17 +16,18 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Arrays;
 
-/**
- * version 1 of the app
- */
 public class LoginActivity extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 1009;
+    public static final String PHONE_NO = "USER_PHONE";
+    public static final String DATA_FILE = "DATA_FILE";
+    private SharedPreferences dataFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        dataFile = getSharedPreferences(DATA_FILE, MODE_PRIVATE);
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
         if(auth.getCurrentUser() != null){
@@ -39,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("ApplySharedPref")
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -46,6 +51,9 @@ public class LoginActivity extends AppCompatActivity {
             IdpResponse idpResponse = IdpResponse.fromResultIntent(data);
 
             if(resultCode == ResultCodes.OK){
+                String phoneNo = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
+                Log.e("Phone No.: ", phoneNo);
+                dataFile.edit().putString(PHONE_NO, phoneNo).commit();
                 startActivity(new Intent(this, MainActivity.class));
                 finish();
                 return;

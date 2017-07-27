@@ -55,9 +55,14 @@ public class DataModel implements Parcelable{
     private String ifscCode;
     private String bankAccountNo;
 
+    private String imageUrl;
+    private String idProofUrl;
+    private String resProofUrl;
+
     public DataModel() {
 
     }
+
 
     protected DataModel(Parcel in) {
         typeOfRequest = in.readString();
@@ -98,6 +103,9 @@ public class DataModel implements Parcelable{
         bankBranch = in.readString();
         ifscCode = in.readString();
         bankAccountNo = in.readString();
+        imageUrl = in.readString();
+        idProofUrl = in.readString();
+        resProofUrl = in.readString();
     }
 
     public static final Creator<DataModel> CREATOR = new Creator<DataModel>() {
@@ -416,6 +424,30 @@ public class DataModel implements Parcelable{
         this.bankAccountNo = bankAccountNo;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getIdProofUrl() {
+        return idProofUrl;
+    }
+
+    public void setIdProofUrl(String idProofUrl) {
+        this.idProofUrl = idProofUrl;
+    }
+
+    public String getResProofUrl() {
+        return resProofUrl;
+    }
+
+    public void setResProofUrl(String resProofUrl) {
+        this.resProofUrl = resProofUrl;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -461,5 +493,8 @@ public class DataModel implements Parcelable{
         parcel.writeString(bankBranch);
         parcel.writeString(ifscCode);
         parcel.writeString(bankAccountNo);
+        parcel.writeString(imageUrl);
+        parcel.writeString(idProofUrl);
+        parcel.writeString(resProofUrl);
     }
 }
