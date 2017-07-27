@@ -20,7 +20,6 @@ public class ApplyActivity extends AppCompatActivity {
     private EditText editMiddleName;
     private EditText editLastName;
     private EditText editFatherName;
-    private EditText editGovtOrg;
     private EditText editEmail;
     private EditText editMobile;
     private EditText editHomeNo;
@@ -39,7 +38,6 @@ public class ApplyActivity extends AppCompatActivity {
         editMiddleName = (EditText) findViewById(R.id.edit_middle_name);
         editLastName = (EditText) findViewById(R.id.edit_last_name);
         editFatherName = (EditText) findViewById(R.id.edit_father_name);
-        editGovtOrg = (EditText) findViewById(R.id.edit_govt_org);
         editEmail = (EditText) findViewById(R.id.edit_email);
         editMobile = (EditText) findViewById(R.id.edit_mobile);
         editHomeNo = (EditText) findViewById(R.id.edit_home_no);
@@ -77,7 +75,6 @@ public class ApplyActivity extends AppCompatActivity {
                 dataModel.setMiddleName(editMiddleName.getText().toString());
                 dataModel.setLastName(editLastName.getText().toString());
                 dataModel.setFatherName(editFatherName.getText().toString());
-                dataModel.setGovtOrganization(editGovtOrg.getText().toString());
                 dataModel.setEmail(editEmail.getText().toString());
                 dataModel.setMobile(editMobile.getText().toString());
                 dataModel.setHomeNumber(editHomeNo.getText().toString());

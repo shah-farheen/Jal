@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="HardcodedText"
-    android:background="@color/background"
+    android:background="#fff"
     tools:context="in.ac.iiitd.jal.AddressActivity">
 
     <LinearLayout
@@ -15,50 +15,166 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+
         <android.support.v7.widget.CardView
-            android:id="@+id/layout_djb_employee"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
             app:cardElevation="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/text_request_type"
+                <LinearLayout
+                    android:id="@+id/layout_govt_employee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#111"
-                    android:textSize="18sp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="3dp"
-                    android:text="For Djb Employees Only"/>
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/edit_employee_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:hint="Employee Id"/>
+                    <TextView
+                        android:id="@+id/text_govt_employee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="18sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="Are you a Government Employee?"/>
 
-                <EditText
-                    android:id="@+id/edit_retire_year"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:hint="Retirement Year"/>
+                    <RadioGroup
+                        android:id="@+id/radio_grp_govt_employee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="2"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/edit_office_address"
+                        <RadioButton
+                            android:id="@+id/radio_btn_govt_yes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimaryText"
+                            android:text="Yes"/>
+
+                        <RadioButton
+                            android:id="@+id/radio_btn_govt_no"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_weight="1"
+                            android:text="No"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_djb_employee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:hint="Office Name &amp; address"/>
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/colorDivider"/>
+
+                    <TextView
+                        android:id="@+id/text_djb_employee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="18sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:text="Are you a DJB Employee?"/>
+
+                    <RadioGroup
+                        android:id="@+id/radio_grp_djb_employee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="2"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_btn_djb_yes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimaryText"
+                            android:text="Yes"/>
+
+                        <RadioButton
+                            android:id="@+id/radio_btn_djb_no"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_weight="1"
+                            android:text="No"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_djb_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edit_govt_org"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:inputType="textAutoComplete"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textColorHint="@color/colorSecondaryText"
+                        android:hint="Name of Govt. Organization"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_djb_yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edit_employee_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:inputType="textAutoComplete"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textColorHint="@color/colorSecondaryText"
+                        android:hint="DJB Employee Id"/>
+
+                    <EditText
+                        android:id="@+id/edit_retire_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:inputType="date"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textColorHint="@color/colorSecondaryText"
+                        android:hint="Retirement Year"/>
+
+                    <EditText
+                        android:id="@+id/edit_office_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:inputType="textMultiLine"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textColorHint="@color/colorSecondaryText"
+                        android:hint="Office Name &amp; address"/>
+                </LinearLayout>
+
+
             </LinearLayout>
+
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -66,6 +182,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
             app:cardElevation="5dp">
 
             <LinearLayout
@@ -78,7 +195,7 @@
                     android:id="@+id/text_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#111"
+                    android:textColor="@color/colorPrimaryText"
                     android:textSize="18sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="3dp"
@@ -90,6 +207,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:inputType="number"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Pin Code"/>
 
                 <EditText
@@ -97,6 +216,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Locality"/>
 
                 <EditText
@@ -104,30 +226,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Sub Locality"/>
                 <EditText
                     android:id="@+id/edit_house_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="House No."/>
                 <EditText
                     android:id="@+id/edit_village"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Village"/>
                 <EditText
                     android:id="@+id/edit_khasra_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:hint="Khasra No."/>
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
+                    android:hint="Khasra Number"/>
                 <EditText
                     android:id="@+id/edit_society_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Society Name"/>
 
                 <CheckBox
@@ -135,6 +272,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
+                    android:textColor="@color/colorPrimaryText"
                     android:textSize="18sp"
                     android:text="JJR Colony"/>
 
@@ -147,6 +285,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
             app:cardElevation="5dp">
 
             <LinearLayout
@@ -159,43 +298,117 @@
                     android:id="@+id/text_property_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#111"
+                    android:textColor="@color/colorPrimaryText"
                     android:textSize="18sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="3dp"
                     android:text="Property Details"/>
 
-                <EditText
-                    android:id="@+id/edit_property_type"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:hint="Individual House/ Flat"/>
+                <!--<EditText-->
+                    <!--android:id="@+id/edit_property_type"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="3dp"-->
+                    <!--android:hint="Individual House/ Flat"/>-->
 
-                <EditText
-                    android:id="@+id/edit_area_type"
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorDivider"/>
+
+                <RadioGroup
+                    android:id="@+id/radio_grp_property_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:hint="Rural/ Urban"/>
+                    android:weightSum="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_btn_house"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:textColor="@color/colorPrimaryText"
+                        android:text="Individual House"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_btn_flat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryText"
+                        android:layout_weight="0.7"
+                        android:text="Flat"/>
+                </RadioGroup>
+
+                <!--<EditText-->
+                    <!--android:id="@+id/edit_area_type"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="3dp"-->
+                    <!--android:hint="Rural/ Urban"/>-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorDivider"/>
+
+                <RadioGroup
+                    android:id="@+id/radio_grp_area_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_btn_rural"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorPrimaryText"
+                        android:text="Rural"/>
+
+                    <RadioButton
+                        android:id="@+id/radio_btn_urban"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryText"
+                        android:layout_weight="1"
+                        android:text="Urban"/>
+                </RadioGroup>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorDivider"/>
 
                 <EditText
                     android:id="@+id/edit_num_floors"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Number of floors"/>
                 <EditText
                     android:id="@+id/edit_plot_area"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Plot Area(in sq m)"/>
                 <EditText
                     android:id="@+id/edit_built_area"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Built-up Area(in sq m)"/>
 
             </LinearLayout>
@@ -206,6 +419,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
             app:cardElevation="5dp">
 
             <LinearLayout
@@ -218,7 +432,7 @@
                     android:id="@+id/text_other_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#111"
+                    android:textColor="@color/colorPrimaryText"
                     android:textSize="18sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="3dp"
@@ -229,13 +443,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:hint="ZRO location"/>
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
+                    android:hint="Zonal Revenue Office location"/>
 
                 <EditText
                     android:id="@+id/edit_child_count"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Children count at Property"/>
 
                 <EditText
@@ -243,6 +463,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Adult count at Property"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -252,6 +475,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
             app:cardElevation="5dp">
 
             <LinearLayout
@@ -264,7 +488,7 @@
                     android:id="@+id/text_bank_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#111"
+                    android:textColor="@color/colorPrimaryText"
                     android:textSize="18sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="3dp"
@@ -275,6 +499,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Name of the Bank"/>
 
                 <EditText
@@ -282,6 +509,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Name of the branch"/>
 
                 <EditText
@@ -289,12 +519,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="IFSC code"/>
                 <EditText
                     android:id="@+id/edit_account_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Bank Account No."/>
 
             </LinearLayout>
@@ -305,9 +541,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next"
-            android:textColor="#fff"
+            android:textColor="@color/colorPrimaryText"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             android:layout_gravity="center"/>
 
     </LinearLayout>

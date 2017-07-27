@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="HardcodedText"
-    android:background="@color/background"
+    android:background="@android:color/white"
     tools:context="in.ac.iiitd.jal.ApplyActivity">
 
     <LinearLayout
@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
             app:cardElevation="5dp">
 
             <LinearLayout
@@ -31,7 +32,7 @@
                     android:id="@+id/text_request_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#111"
+                    android:textColor="@color/colorPrimaryText"
                     android:textSize="18sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="3dp"
@@ -49,12 +50,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
+                        android:textColor="@color/colorPrimaryText"
                         android:text="Water Connection"/>
 
                     <RadioButton
                         android:id="@+id/radio_btn_sewer_connection"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryText"
                         android:text="Sewerage Connection"/>
 
                     <RadioButton
@@ -62,12 +65,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
+                        android:textColor="@color/colorPrimaryText"
                         android:text="Water &amp; Sewerage Connection"/>
 
                     <RadioButton
                         android:id="@+id/radio_btn_regularization"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryText"
                         android:text="Regularization"/>
                 </RadioGroup>
             </LinearLayout>
@@ -78,6 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardElevation="5dp"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
             android:layout_margin="5dp">
 
             <LinearLayout
@@ -91,7 +97,7 @@
                     android:id="@+id/text_details"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#111"
+                    android:textColor="@color/colorPrimaryText"
                     android:textSize="18sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="3dp"
@@ -102,31 +108,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="First Name"/>
                 <EditText
                     android:id="@+id/edit_middle_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Middle Name"/>
                 <EditText
                     android:id="@+id/edit_last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Last Name"/>
                 <EditText
                     android:id="@+id/edit_father_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Father/Husband Name"/>
-                <EditText
-                    android:id="@+id/edit_govt_org"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="3dp"
-                    android:hint="Government Org. if Govt. Employee"/>
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
@@ -135,6 +147,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardElevation="5dp"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
             android:layout_margin="5dp">
 
             <LinearLayout
@@ -148,7 +161,7 @@
                     android:id="@+id/text_contact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#111"
+                    android:textColor="@color/colorPrimaryText"
                     android:textSize="18sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="3dp"
@@ -159,6 +172,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:layout_margin="3dp"
                     android:hint="Email_id"/>
                 <EditText
@@ -166,6 +181,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:layout_margin="3dp"
                     android:hint="Mobile Number"/>
                 <EditText
@@ -173,12 +190,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="phone"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Home Tel. Number"/>
                 <EditText
                     android:id="@+id/edit_office_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
+                    android:inputType="phone"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textColorHint="@color/colorSecondaryText"
                     android:hint="Office Number"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -188,9 +211,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next"
-            android:textColor="#fff"
+            android:textColor="@color/colorPrimaryText"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             android:layout_gravity="center"/>
 
     </LinearLayout>

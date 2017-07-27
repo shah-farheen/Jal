@@ -3,12 +3,14 @@ package in.ac.iiitd.jal;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -30,8 +32,9 @@ public class AddressActivity extends AppCompatActivity {
     private EditText editKhasraNo;
     private EditText editSociety;
 
-    private EditText editPropertyType;
-    private EditText editAreaType;
+    private RadioGroup radioGrpPropertyType;
+    private RadioGroup radioGrpAreaType;
+
     private EditText editFloorCount;
     private EditText editPlotArea;
     private EditText editBuiltUpArea;
@@ -71,8 +74,9 @@ public class AddressActivity extends AppCompatActivity {
         editKhasraNo = (EditText) findViewById(R.id.edit_khasra_no);
         editSociety = (EditText) findViewById(R.id.edit_society_name);
 
-        editPropertyType = (EditText) findViewById(R.id.edit_property_type);
-        editAreaType = (EditText) findViewById(R.id.edit_area_type);
+        radioGrpPropertyType = (RadioGroup) findViewById(R.id.radio_grp_property_type);
+        radioGrpAreaType = (RadioGroup) findViewById(R.id.radio_grp_area_type);
+
         editFloorCount = (EditText) findViewById(R.id.edit_num_floors);
         editPlotArea = (EditText) findViewById(R.id.edit_plot_area);
         editBuiltUpArea = (EditText) findViewById(R.id.edit_built_area);
@@ -93,6 +97,30 @@ public class AddressActivity extends AppCompatActivity {
     }
 
     private void initListeners(){
+        radioGrpPropertyType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if(i == R.id.radio_btn_house){
+                    dataModel.setPropertyType("Individual House");
+                }
+                else {
+                    dataModel.setPropertyType("Flat");
+                }
+            }
+        });
+
+        radioGrpAreaType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if(i == R.id.radio_btn_rural){
+                    dataModel.setAreaType("Rural");
+                }
+                else {
+                    dataModel.setAreaType("Urban");
+                }
+            }
+        });
+
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,8 +136,6 @@ public class AddressActivity extends AppCompatActivity {
                 dataModel.setKhasraNo(editKhasraNo.getText().toString());
                 dataModel.setSocietyName(editSociety.getText().toString());
 
-                dataModel.setPropertyType(editPropertyType.getText().toString());
-                dataModel.setAreaType(editAreaType.getText().toString());
                 dataModel.setFloorCount(editFloorCount.getText().toString());
                 dataModel.setPlotArea(editPlotArea.getText().toString());
                 dataModel.setBuiltUpArea(editBuiltUpArea.getText().toString());

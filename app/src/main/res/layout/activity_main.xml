@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="HardcodedText"
+    android:background="@color/colorPrimaryLight"
     tools:context="in.ac.iiitd.jal.MainActivity">
 
     <Button
@@ -12,9 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Apply for New Connection"
-        android:textColor="#fff"
-        android:padding="5dp"
-        android:background="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryText"
+        android:padding="8dp"
+        android:background="@color/colorAccent"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"/>
 
@@ -23,10 +24,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View Applied Connection status"
-        android:textColor="#fff"
-        android:padding="5dp"
+        android:textColor="@color/colorPrimaryText"
+        android:padding="8dp"
         android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/btn_apply_new"/>
 

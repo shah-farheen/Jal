@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -23,14 +24,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mContext = this;
         applyButton = (Button) findViewById(R.id.btn_apply_new);
-
-        ArrayList<String> list = new ArrayList<>();
-        list.add("One");
-        list.add("Two");
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference dataRef = database.getReference("TestKey");
-        dataRef.child("list").push().child(String.valueOf(System.currentTimeMillis())).setValue("one");
 
         applyButton.setOnClickListener(new View.OnClickListener() {
             @Override
