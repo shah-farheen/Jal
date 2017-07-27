@@ -75,6 +75,7 @@
                     android:id="@+id/layout_djb_employee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <View
@@ -122,6 +123,7 @@
                     android:id="@+id/layout_djb_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <EditText
@@ -139,6 +141,7 @@
                     android:id="@+id/layout_djb_yes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <EditText
@@ -171,8 +174,6 @@
                         android:textColorHint="@color/colorSecondaryText"
                         android:hint="Office Name &amp; address"/>
                 </LinearLayout>
-
-
             </LinearLayout>
 
         </android.support.v7.widget.CardView>

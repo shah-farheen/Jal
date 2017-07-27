@@ -20,6 +20,14 @@ public class AddressActivity extends AppCompatActivity {
     private Context mContext;
     private DataModel dataModel;
 
+    private View layoutDjbEmployee;
+    private View layoutDjbNo;
+    private View layoutDjbYes;
+
+    private RadioGroup radioGrpGovtEmployee;
+    private RadioGroup radioGrpDjbEmployee;
+
+    private EditText editGovtOrg;
     private EditText editEmployeeId;
     private EditText editRetirementYear;
     private EditText editOfficeAddress;
@@ -62,6 +70,14 @@ public class AddressActivity extends AppCompatActivity {
         Intent intent = getIntent();
         dataModel = intent.getParcelableExtra("DataModel");
 
+        layoutDjbEmployee = findViewById(R.id.layout_djb_employee);
+        layoutDjbNo = findViewById(R.id.layout_djb_no);
+        layoutDjbYes = findViewById(R.id.layout_djb_yes);
+
+        radioGrpGovtEmployee = (RadioGroup) findViewById(R.id.radio_grp_govt_employee);
+        radioGrpDjbEmployee = (RadioGroup) findViewById(R.id.radio_grp_djb_employee);
+
+        editGovtOrg = (EditText) findViewById(R.id.edit_govt_org);
         editEmployeeId = (EditText) findViewById(R.id.edit_employee_id);
         editRetirementYear = (EditText) findViewById(R.id.edit_retire_year);
         editOfficeAddress = (EditText) findViewById(R.id.edit_office_address);
@@ -97,6 +113,34 @@ public class AddressActivity extends AppCompatActivity {
     }
 
     private void initListeners(){
+        radioGrpGovtEmployee.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if(i == R.id.radio_btn_govt_yes){
+                    layoutDjbEmployee.setVisibility(View.VISIBLE);
+                }
+                else {
+                    layoutDjbEmployee.setVisibility(View.GONE);
+                    layoutDjbNo.setVisibility(View.GONE);
+                    layoutDjbYes.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        radioGrpDjbEmployee.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                if(i == R.id.radio_btn_djb_yes){
+                    layoutDjbYes.setVisibility(View.VISIBLE);
+                    layoutDjbNo.setVisibility(View.GONE);
+                }
+                else {
+                    layoutDjbYes.setVisibility(View.GONE);
+                    layoutDjbNo.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
         radioGrpPropertyType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
@@ -124,6 +168,7 @@ public class AddressActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dataModel.setGovtOrganization(editGovtOrg.getText().toString());
                 dataModel.setEmployeeId(editEmployeeId.getText().toString());
                 dataModel.setRetirementYear(editRetirementYear.getText().toString());
                 dataModel.setOfficeAddress(editOfficeAddress.getText().toString());
